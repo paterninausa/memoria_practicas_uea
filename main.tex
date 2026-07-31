@@ -15,8 +15,10 @@
 \usepackage[spanish,es-tabla]{babel}
 
 % ---------- Tipografía ----------
-% Se usan las fuentes por defecto de LaTeX (Computer Modern / Latin Modern),
-% en lugar de intentar imitar Century Gothic/Arial de la plantilla Word.
+% Se usa Charter: una serif suave y muy legible (en lugar de la
+% Computer Modern por defecto de LaTeX, de trazo más marcado),
+% sin intentar imitar Century Gothic/Arial de la plantilla Word.
+\usepackage{charter}
 
 % ---------- Geometría de página (según sectPr del docx original) ----------
 % Word: top=2977twips(~5.25cm) right=601(~1.06cm) bottom=2693(~4.75cm) left=601(~1.06cm)
@@ -39,14 +41,14 @@
 \fancyfoot[L]{%
   \begin{tikzpicture}[baseline]
     \node[anchor=west, font=\small] (txt) at (0,0) {%
-      \begin{minipage}[t]{5.5cm}
+      \begin{minipage}[t]{7.5cm}
         \textbf{Campus Teatinos-Universidad}\\
         C/ Eolo, 10\\
         29010 Málaga\\
         \textbf{universidadeuropea.com}
       \end{minipage}%
     };
-    \draw[ueared, thick] (6.3cm,0.1) rectangle ++(0.3,0.3);
+    \draw[ueared, thick] (7.8cm,0.1) rectangle ++(0.3,0.3);
   \end{tikzpicture}%
 }
 \fancyfoot[R]{\thepage}
@@ -57,7 +59,7 @@
   \fancyfoot[L]{%
     \begin{tikzpicture}[baseline]
       \node[anchor=west, font=\small] (txt) at (0,0) {%
-        \begin{minipage}[t]{5.5cm}
+        \begin{minipage}[t]{7.5cm}
           \textbf{Campus Teatinos-Universidad}\\
           C/ Eolo, 10\\
           29010 Málaga\\
@@ -71,13 +73,13 @@
   \renewcommand{\footrulewidth}{0pt}
 }
 
-% ---------- Estilo de los títulos de sección (acento en rojo institucional) ----------
+% ---------- Estilo de los títulos de sección ----------
 \usepackage{titlesec}
 \titleformat{\chapter}[hang]
-  {\normalfont\Large\bfseries\color{ueared}}
+  {\normalfont\normalsize\bfseries}
   {\thechapter.}{1em}{}
 \titleformat{\section}
-  {\normalfont\large\bfseries\color{black}}
+  {\normalfont\normalsize\bfseries}
   {\thesection}{1em}{}
 \titleformat{\subsection}
   {\normalfont\normalsize\bfseries\itshape}
@@ -92,9 +94,9 @@
 \usepackage{hyperref}
 \hypersetup{
   colorlinks=true,
-  linkcolor=ueared,
-  urlcolor=ueared,
-  citecolor=ueared,
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black,
   pdftitle={Memoria de Prácticas Académicas Externas},
   pdfauthor={Nombre Apellido1 Apellido2}
 }
