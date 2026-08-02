@@ -1,0 +1,101 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{mooreslab2026}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=251c3d9a7ef3f687f78234c45dcbdc78}{%
+           family={{Moore's Lab AI}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{251c3d9a7ef3f687f78234c45dcbdc78}
+      \strng{fullhash}{251c3d9a7ef3f687f78234c45dcbdc78}
+      \strng{bibnamehash}{251c3d9a7ef3f687f78234c45dcbdc78}
+      \strng{authorbibnamehash}{251c3d9a7ef3f687f78234c45dcbdc78}
+      \strng{authornamehash}{251c3d9a7ef3f687f78234c45dcbdc78}
+      \strng{authorfullhash}{251c3d9a7ef3f687f78234c45dcbdc78}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Blog post}
+      \field{title}{VerifAgent Explained}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://www.mooreslab.ai/blog-posts/verifagent-explained
+      \endverb
+      \verb{url}
+      \verb https://www.mooreslab.ai/blog-posts/verifagent-explained
+      \endverb
+    \endentry
+    \entry{meng2026}{article}{}
+      \name{author}{6}{}{%
+        {{hash=252f3e0699d125885257dad11a5dd4a3}{%
+           family={Meng},
+           familyi={M\bibinitperiod},
+           given={Chang-Chih},
+           giveni={C\bibinithyphendelim C\bibinitperiod}}}%
+        {{hash=caa55673040994d484459d01fc2e7ce6}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Yu-Ren},
+           giveni={Y\bibinithyphendelim R\bibinitperiod}}}%
+        {{hash=1285bc1ea3a4857f76a279d118a41764}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Guan-Yu},
+           giveni={G\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=7dd73a78687465da7a661e0e3649c25b}{%
+           family={Yeh},
+           familyi={Y\bibinitperiod},
+           given={Tsung\bibnamedelima Tai},
+           giveni={T\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=3452070e21d900c60de4d2f4c60f01ad}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Kai-Chiang},
+           giveni={K\bibinithyphendelim C\bibinitperiod}}}%
+        {{hash=b0046db348d923061f7a45fa84e9c2a8}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={I-Chen},
+           giveni={I\bibinithyphendelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{6d910dca57e62ad17a9530782c6f9b57}
+      \strng{fullhash}{80460750e2ca6913d189c205818e5f86}
+      \strng{bibnamehash}{80460750e2ca6913d189c205818e5f86}
+      \strng{authorbibnamehash}{80460750e2ca6913d189c205818e5f86}
+      \strng{authornamehash}{6d910dca57e62ad17a9530782c6f9b57}
+      \strng{authorfullhash}{80460750e2ca6913d189c205818e5f86}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{title}{HAVEN: Hybrid Automated Verification ENgine for UVM Testbench Synthesis with LLMs}
+      \field{year}{2026}
+      \verb{eprint}
+      \verb 2604.27643
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

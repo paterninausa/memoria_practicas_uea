@@ -5,7 +5,7 @@
 %
 % Plantilla LaTeX que replica la presentación visual del
 % documento Word oficial (Plantilla_MemoriaPracticas_BigData.docx)
-% Compilar con: pdflatex (dos pasadas, para el índice)
+% Compilar con: pdflatex -> biber -> pdflatex -> pdflatex (biblatex necesita biber para la bibliografía)
 %
 % Todo el formato/presentación vive en memoria.cls
 % ============================================================
@@ -26,7 +26,7 @@
 \input{secciones/03-memoria-actividades}
 \input{secciones/04-relacion-titulacion}
 \input{secciones/05-conclusiones}
-\input{secciones/06-anexos}
+\input{secciones/06-referencias}
 
 \input{declaracion}
 

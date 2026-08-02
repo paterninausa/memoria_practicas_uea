@@ -2,8 +2,70 @@
 
 \section{Objetivos propuestos}
 
+Mi objetivo general al iniciar las prácticas fue integrarme en el equipo técnico del Departamento de Inteligencia Artificial y Ciberseguridad de INNOVA IRV, para colaborar en el desarrollo y soporte de proyectos de Inteligencia Artificial, tanto de carácter interno como en el marco de las iniciativas tecnológicas de la Fundación.
+
+De este objetivo general se derivaron dos objetivos específicos, planteados formalmente al inicio de las prácticas:
+
+\begin{itemize}
+  \item Desarrollar un sistema de generación asistida por IA de testbenches UVM (\emph{Universal Verification Methodology}) a partir de especificaciones de diseño hardware, orientado a automatizar parte del proceso de verificación de circuitos integrados que se realiza en el departamento de verificación de hardware de la Fundación.
+  \item Dar soporte en el despliegue, configuración y mantenimiento de entornos de desarrollo para la puesta en marcha de una infraestructura de tipo RAG (\emph{Retrieval-Augmented Generation}), además de participar en el diseño y estructuración de los modelos necesarios para su ejecución.
+\end{itemize}
+
+Como detallo en la sección de planificación, el segundo objetivo no llegó a completarse por causas ajenas al desarrollo de las prácticas, por lo que el grueso de mi trabajo se concentró en el primero.
+
 \section{Planificación de las prácticas}
+
+La planificación original distribuía mis 220 horas de prácticas (8 de junio - 28 de julio de 2026, en horario de 9:00 a 15:00, aproximadamente 30 horas semanales) en dos bloques: las primeras cuatro semanas dedicadas al desarrollo del proyecto de generación de UVM asistida por IA, y el tiempo restante a la implementación de la infraestructura RAG sobre unos servidores cuya llegada estaba prevista para la segunda semana de prácticas.
+
+Este segundo bloque no pudo ejecutarse según lo previsto: el retraso en la llegada de los servidores, unido a la instalación simultánea de un nuevo laboratorio de microelectrónica en la Fundación, hizo inviable dejar los servidores a punto para el proyecto de RAG dentro de mi periodo de prácticas. En consecuencia, reorienté la totalidad de mi tiempo al proyecto de UVM asistido por IA.
+
+\textbf{Metodología de trabajo.} Desde el inicio, mi tutor de la entidad colaboradora, Ing. Natanael Pérez Bucio, me otorgó libertad creativa completa para explorar y emplear las herramientas y estrategias que considerara más adecuadas para el desarrollo del proyecto. A partir del 7 de julio, con la incorporación del Ing. Rakesh Honnavalli Prabhakara como asesor técnico, adoptamos formalmente una dinámica de trabajo ágil, con reuniones diarias (\emph{dailies}) de 15 minutos de duración.
+
+\textbf{División de tareas.} A partir del 29 de junio, tras la presentación del prototipo HAVEN, dividimos las tareas con mi compañero de prácticas: yo asumí el desarrollo continuo y la mejora del sistema HAVEN de generación de testbenches, mientras mi compañero desarrolló, primero, un sistema de conversión de documentos de diseño hardware a formato Markdown y, desde el 8 de julio, un sistema de generación del UVM test plan.
+
+\textbf{Recursos disponibles.} INNOVA IRV me proporcionó el siguiente equipo de trabajo: un ordenador portátil Dell Inspiron 15 (16\,GB RAM / 512\,GB de almacenamiento) con teclado y ratón USB, y un monitor Lenovo de 21 pulgadas con soporte. Desarrollé el proyecto íntegramente sobre Ubuntu bajo WSL (Windows Subsystem for Linux), reservando Windows únicamente para las comunicaciones por correo electrónico y chat con los miembros de INNOVA IRV. Para la generación de código empleé de forma central Claude Code (Anthropic). El uso de la API de Amazon Bedrock estuvo destinado específicamente al funcionamiento del sistema de UVM asistido por IA que desarrollé. Al no disponer la Fundación, en ese momento, de software de simulación para el código UVM generado, ejecuté las simulaciones en el portal EDA Playground.
 
 \section{Descripción detallada de las actividades desarrolladas}
 
+\textbf{8 de junio.} Me incorporé a INNOVA IRV y fui presentado a los equipos de diseño y de verificación de hardware del Departamento de Inteligencia Artificial y Ciberseguridad.
+
+\textbf{9 de junio.} Recibí la presentación formal del proyecto a desarrollar durante mis prácticas, centrado en la automatización de la verificación UVM asistida por IA. El proyecto estuvo inspirado en el sistema VerifAgent de Moore's Lab AI \cite{mooreslab2026}, que automatiza mediante IA la generación del testplan, el testbench, los scoreboards, las aserciones SVA y la cobertura a partir de la especificación de un IP.
+
+\textbf{9 - 19 de junio.} Dediqué esta fase al estudio del problema: fundamentos de la verificación de hardware, SystemVerilog y la metodología UVM y sus componentes, junto con la búsqueda de posibles métodos para generar testbenches UVM asistidos por modelos de lenguaje (LLMs). El 19 de junio ya había localizado y estudiado en profundidad el artículo científico que describe la metodología HAVEN \cite{meng2026}, y había realizado pruebas iniciales exitosas de aplicación de sus principios.
+
+\textbf{19 - 29 de junio.} Construí formalmente un prototipo funcional basado en la metodología HAVEN, como demostración de viabilidad del enfoque.
+
+\textbf{29 de junio.} Presentamos el prototipo HAVEN a los equipos de diseño y de verificación de INNOVA IRV, en una reunión convocada por mi tutor de la entidad colaboradora para dar visibilidad al proyecto dentro de la Fundación. A partir de esta fecha establecimos la división de tareas con mi compañero de prácticas descrita en la sección de planificación.
+
+\textbf{7 de julio.} Se incorporó el Ing. Rakesh Honnavalli Prabhakara como asesor técnico del proyecto y comenzamos las reuniones diarias bajo metodología ágil. Rakesh nos proporcionó como referencia dos proyectos hardware de código abierto sobre los que evaluar y afinar nuestros sistemas: un FIFO síncrono (\emph{Synchronous FIFO}) y un núcleo RISC-V.
+
+\textbf{8 de julio.} Rakesh nos indicó que el proceso formal de verificación debe partir de un esquema inicial de las pruebas a realizar, el \emph{UVM test plan}. Mi compañero de prácticas inició el diseño del sistema de generación del test plan, mientras yo continué el desarrollo del sistema HAVEN.
+
+\textbf{A partir del 10 de julio.} Comencé a incorporar el test plan como información adicional al documento de diseño que alimenta mi metodología HAVEN, en un proceso dinámico e iterativo de adaptación a los cambios y correcciones del test plan, combinado con las pruebas y correcciones propias de mi sistema. Desde este punto se hizo necesaria una coordinación constante entre Rakesh, mi compañero y yo, para unificar criterios sobre el contenido y la estructura del test plan, de modo que ambos sistemas - el de generación del test plan y el mío, de generación del testbench - pudieran interoperar sin ambigüedad en la información compartida.
+
+\textbf{Estudio de modelo local frente a modelo en la nube.} Por indicación de la dirección del proyecto, evaluamos la viabilidad de sustituir las llamadas a la API de Amazon Bedrock por un modelo LLM ejecutado localmente en los nuevos servidores de la Fundación, con el fin de evitar el coste del servicio en la nube. El estudio puso de manifiesto la incapacidad del mayor modelo local ejecutable en dichos servidores (considerando su capacidad de memoria y procesamiento) para generar de forma fiable la información que requerían ambos sistemas. Documentamos formalmente los resultados y los presentamos el 17 de julio al CTO de INNOVA IRV.
+
+\textbf{Tramo final de las prácticas.} Dediqué el tiempo restante a probar y mejorar ambos sistemas sobre un nuevo caso de estudio: el documento de diseño y el RTL de un interruptor (\emph{switch}) de 8 canales, que nos suministró Rakesh. El último día de prácticas lo empleamos en empaquetar ambos proyectos en archivos comprimidos, que entregamos al equipo de verificación de INNOVA IRV.
+
 \section{Calendario de las prácticas y lugar/es de realización}
+
+Desarrollé mis prácticas íntegramente de forma \textbf{presencial} en la sede de INNOVA IRV (Parque Tecnológico de Andalucía, Málaga), entre el \textbf{8 de junio y el 28 de julio de 2026}, en horario de 9:00 a 15:00 (aproximadamente 30 horas semanales, 220 horas en total).
+
+\begin{center}
+\begin{tabular}{@{}p{3cm}p{11.5cm}@{}}
+\hline
+\textbf{Fecha} & \textbf{Hito} \\
+\hline
+8 jun & Incorporación y presentación de equipos \\
+9 jun & Presentación formal del proyecto \\
+9 - 19 jun & Fase de estudio (UVM, SystemVerilog, LLMs); hallazgo del paper HAVEN \\
+19 - 29 jun & Construcción del prototipo HAVEN \\
+29 jun & Presentación del prototipo a los equipos de diseño y verificación; división de tareas \\
+7 jul & Incorporación de Rakesh como asesor; inicio de dailies; referencias FIFO y RISC-V \\
+8 jul & Definición del requisito del UVM test plan \\
+10 jul & Integración del test plan en la metodología HAVEN; coordinación de criterios \\
+17 jul & Presentación al CTO del estudio modelo local vs. Bedrock \\
+Jul (tramo final) & Pruebas sobre el caso del interruptor de 8 canales; entrega final \\
+\hline
+\end{tabular}
+\end{center}
