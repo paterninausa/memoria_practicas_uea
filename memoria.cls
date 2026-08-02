@@ -107,6 +107,7 @@
 \RequirePackage{enumitem}
 
 % ---------- Bibliografía (estilo IEEE, como en uea_tfm) ----------
-\RequirePackage[style=ieee]{biblatex}
+% maxbibnames/minbibnames: con más de 3 autores, se listan los 3 primeros y "et al."
+\RequirePackage[style=ieee, maxbibnames=3, minbibnames=3]{biblatex}
 \bibliography{bibliography}
 \RequirePackage{csquotes}

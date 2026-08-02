@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1785687523.37174 "main.bcf" "main.bbl" "main" 1785688012.1413 0
+["biber main"] 1785699868.82081 "main.bcf" "main.bbl" "main" 1785700297.45151 0
   "bibliography.bib" 1785687427.24545 534 4521b5c3b7efd14e54f0f424ebf06d71 ""
-  "main.bcf" 1785688012.06975 107270 d415ca9c861ccc4039d0ff9ba46fc891 "pdflatex"
+  "main.bcf" 1785700297.39209 107270 5d48580e07fd68b2de7f7cc83f38436d "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1785688011.08662 "/home/pater/ueaMasterBD/memoria_practicas_uea/main.tex" "main.pdf" "main" 1785688012.14161 0
+["pdflatex"] 1785700296.52889 "/home/pater/ueaMasterBD/memoria_practicas_uea/main.tex" "main.pdf" "main" 1785700297.45175 0
   "/etc/texmf/web2c/texmf.cnf" 1783016783.04239 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/pater/ueaMasterBD/memoria_practicas_uea/main.tex" 1785687455.84534 973 a7b7968b6b7d4bcaeeda5a848d20d371 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -191,22 +191,22 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1783016794.73041 5312232 f3296911be9cc021788f3f879cf0a47d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1783016814 6822845 a14125849bd056948643269241c54ee8 ""
-  "declaracion.tex" 1785579245.26722 768 327c7aad352196437f679ac24b49650a ""
+  "declaracion.tex" 1785697259.46668 744 1e2e0510313778bf78455fa8b11de5ad ""
   "img/logo.png" 1785526887.59137 19727 9f7ef9dbf28c11044b2af8f213566ef6 ""
-  "main.aux" 1785688012.06575 3829 2f41ce7e09bbd6a3c4d9a957fee18977 "pdflatex"
-  "main.bbl" 1785687524.10758 3668 43929cc408fe749f18ec6b726d14668c "biber main"
-  "main.out" 1785688012.06575 5171 191c5898b73daa73f883b105fd0a1511 "pdflatex"
-  "main.run.xml" 1785688012.07581 2404 5b7fcc59e31265c29001ba88c4e1c8f9 "pdflatex"
+  "main.aux" 1785700297.38689 3795 0bc56a5aaf019564194abf6c43c6caf1 "pdflatex"
+  "main.bbl" 1785699869.48816 3668 5dd4c60a3d609358c187acd2777a642d "biber main"
+  "main.out" 1785700297.39049 4999 5f86d1fa9855221b61938be9079e354b "pdflatex"
+  "main.run.xml" 1785700297.39354 2404 5b7fcc59e31265c29001ba88c4e1c8f9 "pdflatex"
   "main.tex" 1785687455.84534 973 a7b7968b6b7d4bcaeeda5a848d20d371 ""
-  "main.toc" 1785688012.07581 2035 c5e0fea4ea8e73bdc019f5ebe32554fc "pdflatex"
-  "memoria.cls" 1785688010.90205 3515 02250000ad0219425de2449fd38d5dbd ""
+  "main.toc" 1785700297.39354 2001 ac18ae2af15426fab074a69513205d81 "pdflatex"
+  "memoria.cls" 1785699831.36687 3631 e46a939710868a4cb1e63811b6a1f1a0 ""
   "portada.tex" 1785686481.22372 913 5b1c4bc6f9d243664a64a383a53855d8 ""
-  "secciones/01-datos-generales.tex" 1785686440.25935 6077 fec30e53d56dbd6ad7de57d106bbe6fc ""
+  "secciones/01-datos-generales.tex" 1785697473.87872 6064 4e33eef59f48fea59c6a2cd8f702d27f ""
   "secciones/02-institucion.tex" 1785568500.76776 44 5b964a101b1f6239c6da181f58ecc398 ""
-  "secciones/03-memoria-actividades.tex" 1785687443.5511 9372 c38f8adc4f815184b6c2131d5475738b ""
-  "secciones/04-relacion-titulacion.tex" 1785684984.22565 2878 787157c4678956893401add15129bf82 ""
-  "secciones/05-conclusiones.tex" 1785686473.88823 4105 eb430b5f0c5d093b09cb1bb6b48565b9 ""
-  "secciones/06-referencias.tex" 1785687967.30994 124 5e470e482c0c55cf8169e2d4a17e214d ""
+  "secciones/03-memoria-actividades.tex" 1785700296.40517 9562 53f07c278c9297139a8e9ddd1835a8df ""
+  "secciones/04-relacion-titulacion.tex" 1785700296.31483 3035 be05c3b5cd7539b5e6134174c381c9f0 ""
+  "secciones/05-conclusiones.tex" 1785699678.4949 4123 f0f502827c656de17d90f6c0bf7f06a5 ""
+  "secciones/06-referencias.tex" 1785691365.98168 124 5e470e482c0c55cf8169e2d4a17e214d ""
   (generated)
   "main.aux"
   "main.bcf"

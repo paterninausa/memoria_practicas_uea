@@ -7,45 +7,45 @@ Mi objetivo general al iniciar las prácticas fue integrarme en el equipo técni
 De este objetivo general se derivaron dos objetivos específicos, planteados formalmente al inicio de las prácticas:
 
 \begin{itemize}
-  \item Desarrollar un sistema de generación asistida por IA de testbenches UVM (\emph{Universal Verification Methodology}) a partir de especificaciones de diseño hardware, orientado a automatizar parte del proceso de verificación de circuitos integrados que se realiza en el departamento de verificación de hardware de la Fundación.
-  \item Dar soporte en el despliegue, configuración y mantenimiento de entornos de desarrollo para la puesta en marcha de una infraestructura de tipo RAG (\emph{Retrieval-Augmented Generation}), además de participar en el diseño y estructuración de los modelos necesarios para su ejecución.
+  \item Desarrollar un sistema de generación asistida por IA de testbenches UVM (\emph{Universal Verification Methodology}) a partir de especificaciones de diseño de hardware, orientado a automatizar parte del proceso de verificación de circuitos integrados que se realiza en el departamento de verificación de hardware de la Fundación.
+  \item Dar soporte en el despliegue y configuración de una infraestructura LLM local de tipo RAG (\emph{Retrieval-Augmented Generation}), además de participar en el diseño y estructuración de los modelos necesarios para su ejecución.
 \end{itemize}
 
 Como detallo en la sección de planificación, el segundo objetivo no llegó a completarse por causas ajenas al desarrollo de las prácticas, por lo que el grueso de mi trabajo se concentró en el primero.
 
 \section{Planificación de las prácticas}
 
-La planificación original distribuía mis 220 horas de prácticas (8 de junio - 28 de julio de 2026, en horario de 9:00 a 15:00, aproximadamente 30 horas semanales) en dos bloques: las primeras cuatro semanas dedicadas al desarrollo del proyecto de generación de UVM asistida por IA, y el tiempo restante a la implementación de la infraestructura RAG sobre unos servidores cuya llegada estaba prevista para la segunda semana de prácticas.
+La planificación original distribuía mis 220 horas de prácticas (8 de junio - 28 de julio de 2026, en horario de 9:00 a 15:00, aproximadamente 30 horas semanales) en dos bloques: las primeras cuatro semanas dedicadas al desarrollo del proyecto de generación de UVM asistida por IA, y el bloque restante a la implementación de la infraestructura LLM RAG sobre nuevos servidores cuya llegada estaba prevista para la segunda semana de las prácticas.
 
-Este segundo bloque no pudo ejecutarse según lo previsto: el retraso en la llegada de los servidores, unido a la instalación simultánea de un nuevo laboratorio de microelectrónica en la Fundación, hizo inviable dejar los servidores a punto para el proyecto de RAG dentro de mi periodo de prácticas. En consecuencia, reorienté la totalidad de mi tiempo al proyecto de UVM asistido por IA.
+Este segundo bloque no pudo ejecutarse según lo previsto: el retraso en la llegada de los nuevos servidores, unido a la instalación prioritaria de un nuevo laboratorio de microelectrónica en la Fundación, hizo inviable dejar los servidores a punto para el proyecto de RAG dentro de mi periodo de prácticas. En consecuencia, reorienté la totalidad de mi tiempo al proyecto de UVM asistido por IA.
 
-\textbf{Metodología de trabajo.} Desde el inicio, mi tutor de la entidad colaboradora, Ing. Natanael Pérez Bucio, me otorgó libertad creativa completa para explorar y emplear las herramientas y estrategias que considerara más adecuadas para el desarrollo del proyecto. A partir del 7 de julio, con la incorporación del Ing. Rakesh Honnavalli Prabhakara como asesor técnico, adoptamos formalmente una dinámica de trabajo ágil, con reuniones diarias (\emph{dailies}) de 15 minutos de duración.
+\textbf{Metodología de trabajo.} Desde el inicio, mi tutor de la entidad colaboradora, Ing. Natanael Pérez Bucio, nos otorgó a mí y a mi compañero de prácticas libertad creativa para explorar y emplear las herramientas y estrategias que consideráramos más adecuadas para el desarrollo del proyecto. A partir del 7 de julio, con la incorporación del Ing. Rakesh Honnavalli Prabhakara como asesor técnico, adoptamos formalmente una dinámica de trabajo ágil, con reuniones diarias (\emph{dailies}) de 15 minutos de duración.
 
-\textbf{División de tareas.} A partir del 29 de junio, tras la presentación del prototipo HAVEN, dividimos las tareas con mi compañero de prácticas: yo asumí el desarrollo continuo y la mejora del sistema HAVEN de generación de testbenches, mientras mi compañero desarrolló, primero, un sistema de conversión de documentos de diseño hardware a formato Markdown y, desde el 8 de julio, un sistema de generación del UVM test plan.
+\textbf{División de tareas.} A partir del 29 de junio, tras la presentación del prototipo HAVEN, dividimos las tareas con mi compañero de prácticas: yo asumí el desarrollo continuo y mejora del sistema HAVEN de generación de testbenches, mientras mi compañero desarrolló un sistema de conversión de documentos de diseño de hardware a formato Markdown y posteriormente un sistema de generación del UVM test plan.
 
-\textbf{Recursos disponibles.} INNOVA IRV me proporcionó el siguiente equipo de trabajo: un ordenador portátil Dell Inspiron 15 (16\,GB RAM / 512\,GB de almacenamiento) con teclado y ratón USB, y un monitor Lenovo de 21 pulgadas con soporte. Desarrollé el proyecto íntegramente sobre Ubuntu bajo WSL (Windows Subsystem for Linux), reservando Windows únicamente para las comunicaciones por correo electrónico y chat con los miembros de INNOVA IRV. Para la generación de código empleé de forma central Claude Code (Anthropic). El uso de la API de Amazon Bedrock estuvo destinado específicamente al funcionamiento del sistema de UVM asistido por IA que desarrollé. Al no disponer la Fundación, en ese momento, de software de simulación para el código UVM generado, ejecuté las simulaciones en el portal EDA Playground.
+\textbf{Recursos disponibles.} INNOVA IRV me proporcionó el siguiente equipo de trabajo: un ordenador portátil Dell Inspiron 15 (16\,GB RAM / 512\,GB de almacenamiento) con teclado y ratón inalámbricos, y un monitor Lenovo de 21 pulgadas con soporte. Desarrollé el proyecto íntegramente sobre Ubuntu bajo WSL (Windows Subsystem for Linux), reservando Windows únicamente para las comunicaciones por correo electrónico y chat con los miembros de INNOVA IRV. Para la generación de código empleé de forma central Claude Code (Anthropic). Se usó una API de Amazon Bedrock específicamente para el funcionamiento del sistema de UVM asistido por IA desarrollado. Al no disponer la Fundación, en ese momento, de software de simulación para el código UVM generado, se ejecutaron las simulaciones en el portal público EDA Playground.
 
 \section{Descripción detallada de las actividades desarrolladas}
 
-\textbf{8 de junio.} Me incorporé a INNOVA IRV y fui presentado a los equipos de diseño y de verificación de hardware del Departamento de Inteligencia Artificial y Ciberseguridad.
+\textbf{8 de junio.} Me incorporé al Departamento de Inteligencia Artificial y Ciberseguridad de INNOVA IRV y fui presentado a los equipos de diseño y de verificación de hardware de Innova IRV Microelectronics S.L.
 
-\textbf{9 de junio.} Recibí la presentación formal del proyecto a desarrollar durante mis prácticas, centrado en la automatización de la verificación UVM asistida por IA. El proyecto estuvo inspirado en el sistema VerifAgent de Moore's Lab AI \cite{mooreslab2026}, que automatiza mediante IA la generación del testplan, el testbench, los scoreboards, las aserciones SVA y la cobertura a partir de la especificación de un IP.
+\textbf{9 de junio.} Recibí la presentación formal del proyecto a desarrollar durante mis prácticas, centrado en la automatización de la verificación UVM asistida por IA. El proyecto estuvo inspirado en el sistema VerifAgent de Moore's Lab AI \cite{mooreslab2026}, que automatiza mediante IA la generación del testplan, el testbench, los scoreboards, las aserciones SVA y la cobertura a partir de la especificación de un IP (diseño de hardware).
 
-\textbf{9 - 19 de junio.} Dediqué esta fase al estudio del problema: fundamentos de la verificación de hardware, SystemVerilog y la metodología UVM y sus componentes, junto con la búsqueda de posibles métodos para generar testbenches UVM asistidos por modelos de lenguaje (LLMs). El 19 de junio ya había localizado y estudiado en profundidad el artículo científico que describe la metodología HAVEN \cite{meng2026}, y había realizado pruebas iniciales exitosas de aplicación de sus principios.
+\textbf{9 - 19 de junio.} Dediqué este tiempo al estudio del problema: fundamentos de la verificación de hardware, SystemVerilog, la metodología UVM y sus componentes, junto con la búsqueda de posibles métodos para generar testbenches UVM asistidos por modelos de lenguaje (LLMs). El 19 de junio ya habíamos localizado y estudiado en profundidad el artículo científico que describe la metodología HAVEN \cite{meng2026}, y habíamos realizado pruebas iniciales exitosas de aplicación de sus principios.
 
-\textbf{19 - 29 de junio.} Construí formalmente un prototipo funcional basado en la metodología HAVEN, como demostración de viabilidad del enfoque.
+\textbf{19 - 29 de junio.} Construimos formalmente un prototipo funcional basado en la metodología HAVEN, como demostración de la viabilidad de este enfoque.
 
-\textbf{29 de junio.} Presentamos el prototipo HAVEN a los equipos de diseño y de verificación de INNOVA IRV, en una reunión convocada por mi tutor de la entidad colaboradora para dar visibilidad al proyecto dentro de la Fundación. A partir de esta fecha establecimos la división de tareas con mi compañero de prácticas descrita en la sección de planificación.
+\textbf{29 de junio.} Presentamos el prototipo basado en HAVEN a los equipos de diseño y de verificación de INNOVA IRV Microelectronics, en una reunión convocada por mi tutor del Departamento de IA, para dar visibilidad al proyecto dentro de la Fundación. A partir de esta fecha establecimos la división de tareas con mi compañero de prácticas descrita en la sección de planificación.
 
 \textbf{7 de julio.} Se incorporó el Ing. Rakesh Honnavalli Prabhakara como asesor técnico del proyecto y comenzamos las reuniones diarias bajo metodología ágil. Rakesh nos proporcionó como referencia dos proyectos hardware de código abierto sobre los que evaluar y afinar nuestros sistemas: un FIFO síncrono (\emph{Synchronous FIFO}) y un núcleo RISC-V.
 
-\textbf{8 de julio.} Rakesh nos indicó que el proceso formal de verificación debe partir de un esquema inicial de las pruebas a realizar, el \emph{UVM test plan}. Mi compañero de prácticas inició el diseño del sistema de generación del test plan, mientras yo continué el desarrollo del sistema HAVEN.
+\textbf{8 de julio.} Rakesh Honnavalli nos instruyó que el proceso formal de verificación en UVM debe partir de un esquema inicial de las pruebas a realizar, el \emph{UVM test plan}. Mi compañero de prácticas inició el diseño del sistema de generación del test plan, mientras yo continué el desarrollo del sistema HAVEN.
 
-\textbf{A partir del 10 de julio.} Comencé a incorporar el test plan como información adicional al documento de diseño que alimenta mi metodología HAVEN, en un proceso dinámico e iterativo de adaptación a los cambios y correcciones del test plan, combinado con las pruebas y correcciones propias de mi sistema. Desde este punto se hizo necesaria una coordinación constante entre Rakesh, mi compañero y yo, para unificar criterios sobre el contenido y la estructura del test plan, de modo que ambos sistemas - el de generación del test plan y el mío, de generación del testbench - pudieran interoperar sin ambigüedad en la información compartida.
+\textbf{A partir del 10 de julio.} Comencé a incorporar el test plan generado por mi compañero como información adicional al documento de diseño que alimenta mi metodología HAVEN, en un proceso dinámico e iterativo de adaptación a los cambios y correcciones de dicho documento, combinado con las pruebas y correcciones propias de mi sistema. Desde este punto se hizo necesaria una coordinación constante entre Rakesh, mi compañero y yo, para unificar criterios sobre el contenido y la estructura del test plan, de modo que ambos sistemas - el de generación del test plan y el mío, de generación del testbench - pudieran interoperar sin fallos en la información compartida.
 
-\textbf{Estudio de modelo local frente a modelo en la nube.} Por indicación de la dirección del proyecto, evaluamos la viabilidad de sustituir las llamadas a la API de Amazon Bedrock por un modelo LLM ejecutado localmente en los nuevos servidores de la Fundación, con el fin de evitar el coste del servicio en la nube. El estudio puso de manifiesto la incapacidad del mayor modelo local ejecutable en dichos servidores (considerando su capacidad de memoria y procesamiento) para generar de forma fiable la información que requerían ambos sistemas. Documentamos formalmente los resultados y los presentamos el 17 de julio al CTO de INNOVA IRV.
+\textbf{Estudio de modelo local frente a modelo en la nube.} Por indicación del tutor del proyecto, evaluamos la viabilidad de sustituir las llamadas a la API de Amazon Bedrock por un modelo LLM ejecutado localmente en los nuevos servidores de la Fundación, con el fin de evitar el coste del servicio en la nube. El estudio puso de manifiesto la incapacidad del mayor modelo local ejecutable en dichos servidores (considerando su capacidad de memoria y procesamiento) para generar de forma fiable la información que requerían ambos sistemas. Documentamos formalmente los resultados del estudio y los presentamos el 17 de julio al CTO de INNOVA IRV.
 
-\textbf{Tramo final de las prácticas.} Dediqué el tiempo restante a probar y mejorar ambos sistemas sobre un nuevo caso de estudio: el documento de diseño y el RTL de un interruptor (\emph{switch}) de 8 canales, que nos suministró Rakesh. El último día de prácticas lo empleamos en empaquetar ambos proyectos en archivos comprimidos, que entregamos al equipo de verificación de INNOVA IRV.
+\textbf{Tramo final de las prácticas.} Dedicamos el tiempo restante a probar y mejorar ambos sistemas sobre un nuevo caso de estudio: el documento de diseño y el RTL de un interruptor (\emph{switch}) de 8 canales, que nos suministró Rakesh Honnavalli. El último día de prácticas lo empleamos en empaquetar ambos proyectos en archivos comprimidos, que entregamos al equipo de verificación de INNOVA IRV Microelectronics.
 
 \section{Calendario de las prácticas y lugar/es de realización}
 
@@ -58,14 +58,14 @@ Desarrollé mis prácticas íntegramente de forma \textbf{presencial} en la sede
 \hline
 8 jun & Incorporación y presentación de equipos \\
 9 jun & Presentación formal del proyecto \\
-9 - 19 jun & Fase de estudio (UVM, SystemVerilog, LLMs); hallazgo del paper HAVEN \\
+9 - 19 jun & Fase de estudio (UVM, SystemVerilog, etc.); hallazgo del paper HAVEN \\
 19 - 29 jun & Construcción del prototipo HAVEN \\
 29 jun & Presentación del prototipo a los equipos de diseño y verificación; división de tareas \\
-7 jul & Incorporación de Rakesh como asesor; inicio de dailies; referencias FIFO y RISC-V \\
-8 jul & Definición del requisito del UVM test plan \\
+7 jul & Incorporación de Rakesh Honnavalli como asesor; inicio de dailies; referencias FIFO y RISC-V \\
+8 jul & Definición del UVM test plan como requisito \\
 10 jul & Integración del test plan en la metodología HAVEN; coordinación de criterios \\
-17 jul & Presentación al CTO del estudio modelo local vs. Bedrock \\
-Jul (tramo final) & Pruebas sobre el caso del interruptor de 8 canales; entrega final \\
+17 jul & Presentación al CTO del estudio LLM local vs. AWS Bedrock \\
+17 - 28 jul & Pruebas sobre el diseño del interruptor de 8 canales; entrega final del proyecto \\
 \hline
 \end{tabular}
 \end{center}
