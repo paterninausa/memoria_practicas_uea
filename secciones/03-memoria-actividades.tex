@@ -21,9 +21,9 @@ Este segundo bloque no pudo ejecutarse según lo previsto: el retraso en la lleg
 
 \textbf{Metodología de trabajo.} Desde el inicio, mi tutor de la entidad colaboradora, Ing. Natanael Pérez Bucio, nos otorgó a mí y a mi compañero de prácticas libertad creativa para explorar y emplear las herramientas y estrategias que consideráramos más adecuadas para el desarrollo del proyecto. A partir del 7 de julio, con la incorporación del Ing. Rakesh Honnavalli Prabhakara como asesor técnico, adoptamos formalmente una dinámica de trabajo ágil, con reuniones diarias (\emph{dailies}) de 15 minutos de duración.
 
-\textbf{División de tareas.} A partir del 29 de junio, tras la presentación del prototipo HAVEN, dividimos las tareas con mi compañero de prácticas: yo asumí el desarrollo continuo y mejora del sistema HAVEN de generación de testbenches, mientras mi compañero desarrolló un sistema de conversión de documentos de diseño de hardware a formato Markdown y posteriormente un sistema de generación del UVM test plan.
+\textbf{División de tareas.} A partir del 29 de junio, tras la presentación del prototipo HAVEN, dividimos las tareas con mi compañero de prácticas: yo asumí el desarrollo continuo y mejora del sistema de generación de UVM asistido por IA, mientras mi compañero desarrolló un sistema de conversión de documentos de diseño de hardware a formato Markdown y posteriormente un sistema de generación del UVM test plan.
 
-\textbf{Recursos disponibles.} INNOVA IRV me proporcionó el siguiente equipo de trabajo: un ordenador portátil Dell Inspiron 15 (16\,GB RAM / 512\,GB de almacenamiento) con teclado y ratón inalámbricos, y un monitor Lenovo de 21 pulgadas con soporte. Desarrollé el proyecto íntegramente sobre Ubuntu bajo WSL (Windows Subsystem for Linux), reservando Windows únicamente para las comunicaciones por correo electrónico y chat con los miembros de INNOVA IRV. Para la generación de código empleé de forma central Claude Code (Anthropic). Se usó una API de Amazon Bedrock específicamente para el funcionamiento del sistema de UVM asistido por IA desarrollado. Al no disponer la Fundación, en ese momento, de software de simulación para el código UVM generado, se ejecutaron las simulaciones en el portal público EDA Playground.
+\textbf{Recursos disponibles.} INNOVA IRV me proporcionó el siguiente equipo de trabajo: un ordenador portátil Dell Inspiron 15 (16\,GB RAM / 512\,GB de almacenamiento) con teclado y ratón inalámbricos, y un monitor Lenovo de 21 pulgadas con soporte. Desarrollé el proyecto íntegramente sobre Ubuntu bajo WSL (Windows Subsystem for Linux), reservando Windows únicamente para las comunicaciones por correo electrónico y chat con los miembros de INNOVA IRV. Para la generación de código empleé de forma central Claude Code (Anthropic). Se usó una API de Amazon Bedrock específicamente para el funcionamiento del sistema de UVM asistido por IA. Al no disponer la Fundación, en ese momento, de software de simulación y verificación del código UVM generado por el sistema, se ejecutaron dichos procesos en el portal público EDA Playground.
 
 \section{Descripción detallada de las actividades desarrolladas}
 
@@ -41,11 +41,13 @@ Este segundo bloque no pudo ejecutarse según lo previsto: el retraso en la lleg
 
 \textbf{8 de julio.} Rakesh Honnavalli nos instruyó que el proceso formal de verificación en UVM debe partir de un esquema inicial de las pruebas a realizar, el \emph{UVM test plan}. Mi compañero de prácticas inició el diseño del sistema de generación del test plan, mientras yo continué el desarrollo del sistema HAVEN.
 
-\textbf{A partir del 10 de julio.} Comencé a incorporar el test plan generado por mi compañero como información adicional al documento de diseño que alimenta mi metodología HAVEN, en un proceso dinámico e iterativo de adaptación a los cambios y correcciones de dicho documento, combinado con las pruebas y correcciones propias de mi sistema. Desde este punto se hizo necesaria una coordinación constante entre Rakesh, mi compañero y yo, para unificar criterios sobre el contenido y la estructura del test plan, de modo que ambos sistemas - el de generación del test plan y el mío, de generación del testbench - pudieran interoperar sin fallos en la información compartida.
+\textbf{A partir del 10 de julio.} Comencé a incorporar el test plan generado por mi compañero como información complementaria al documento de diseño que alimenta al sistema HAVEN, en un proceso dinámico e iterativo de adaptación a los cambios y correcciones de dicho test plan, combinado con las pruebas y correcciones propias de mi sistema. 
 
-\textbf{Estudio de modelo local frente a modelo en la nube.} Por indicación del tutor del proyecto, evaluamos la viabilidad de sustituir las llamadas a la API de Amazon Bedrock por un modelo LLM ejecutado localmente en los nuevos servidores de la Fundación, con el fin de evitar el coste del servicio en la nube. El estudio puso de manifiesto la incapacidad del mayor modelo local ejecutable en dichos servidores (considerando su capacidad de memoria y procesamiento) para generar de forma fiable la información que requerían ambos sistemas. Documentamos formalmente los resultados del estudio y los presentamos el 17 de julio al CTO de INNOVA IRV.
+Desde este punto se hizo necesario una coordinación constante entre Rakesh Honnavalli, mi compañero y yo, para unificar criterios sobre el contenido y la estructura del test plan, de modo que ambos sistemas, el de generación del test plan y el mío de generación del testbench, pudieran interoperar sin fallos con la información compartida.
 
-\textbf{Tramo final de las prácticas.} Dedicamos el tiempo restante a probar y mejorar ambos sistemas sobre un nuevo caso de estudio: el documento de diseño y el RTL de un interruptor (\emph{switch}) de 8 canales, que nos suministró Rakesh Honnavalli. El último día de prácticas lo empleamos en empaquetar ambos proyectos en archivos comprimidos, que entregamos al equipo de verificación de INNOVA IRV Microelectronics.
+\textbf{17 de julio. Estudio de modelo local frente a modelo en la nube.} Por indicación del ing. Natanael, evaluamos la viabilidad de sustituir las llamadas a la API de Amazon Bedrock por un modelo LLM ejecutado localmente en los nuevos servidores de la Fundación, con el fin de evitar el coste del servicio en la nube. El estudio puso de manifiesto la incapacidad del mayor modelo local ejecutable en dichos servidores (considerando su capacidad de memoria y procesamiento) para generar de forma fiable la información que requerían ambos sistemas. Documentamos formalmente los resultados del estudio y los presentamos el 17 de julio al CTO de INNOVA IRV.
+
+\textbf{Tramo final de las prácticas.} Dedicamos el tiempo restante a probar y mejorar ambos sistemas sobre un nuevo caso de estudio: el documento de diseño y el RTL de un interruptor (\emph{switch}) de 8 canales, que nos suministró Rakesh Honnavalli. El último día de prácticas lo empleamos en consolidar y empacar ambos proyectos en archivos comprimidos, que entregamos al equipo de verificación de INNOVA IRV Microelectronics.
 
 \section{Calendario de las prácticas y lugar/es de realización}
 
@@ -58,12 +60,12 @@ Desarrollé mis prácticas íntegramente de forma \textbf{presencial} en la sede
 \hline
 8 jun & Incorporación y presentación de equipos \\
 9 jun & Presentación formal del proyecto \\
-9 - 19 jun & Fase de estudio (UVM, SystemVerilog, etc.); hallazgo del paper HAVEN \\
+9 - 19 jun & Fase de estudio (UVM, SystemVerilog, etc.); hallazgo del paper HAVEN \cite{meng2026}\\
 19 - 29 jun & Construcción del prototipo HAVEN \\
-29 jun & Presentación del prototipo a los equipos de diseño y verificación; división de tareas \\
-7 jul & Incorporación de Rakesh Honnavalli como asesor; inicio de dailies; referencias FIFO y RISC-V \\
+29 jun & Presentación del prototipo a los equipos de diseño y de verificación; división de tareas \\
+7 jul & Incorporación de Rakesh Honnavalli como asesor; inicio de dailies; referencias de diseños FIFO y RISC-V \\
 8 jul & Definición del UVM test plan como requisito \\
-10 jul & Integración del test plan en la metodología HAVEN; coordinación de criterios \\
+10 jul & Integración del test plan en la metodología HAVEN; coordinación y sincronización entre proyectos \\
 17 jul & Presentación al CTO del estudio LLM local vs. AWS Bedrock \\
 17 - 28 jul & Pruebas sobre el diseño del interruptor de 8 canales; entrega final del proyecto \\
 \hline

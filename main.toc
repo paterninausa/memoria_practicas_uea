@@ -1,10 +1,10 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\numberline {1}Datos generales de las prácticas}{2}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Descripción de la Institución pública}{2}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Breve historia de la Institución pública}{2}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Ubicación, sector y actividades que realiza la Institución pública}{2}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.1}Breve historia}{2}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Ubicación, sector y actividades que realiza}{2}{subsection.1.1.2}%
 \contentsline {subsection}{\numberline {1.1.3}Departamento y lugar de realización de las prácticas}{3}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4}Datos de interés de la Institución pública}{3}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.4}Datos de interés}{3}{subsection.1.1.4}%
 \contentsline {chapter}{\numberline {2}Memoria de Actividades}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Objetivos propuestos}{5}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Planificación de las prácticas}{5}{section.2.2}%
@@ -19,3 +19,4 @@
 \contentsline {section}{\numberline {4.3}Utilidad para la futura inserción laboral}{12}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Sugerencias de mejora}{12}{section.4.4}%
 \contentsline {chapter}{\numberline {5}Referencias bibliográficas}{13}{chapter.5}%
+\contentsline {chapter}{Declaración firmada}{14}{section*.1}%

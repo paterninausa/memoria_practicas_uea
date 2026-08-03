@@ -13,7 +13,7 @@
 \renewcommand{\familydefault}{\sfdefault}
 
 % Excepciones de guionado: evita cortes de línea no deseados en estas palabras
-\hyphenation{Grandes HAVEN}
+\hyphenation{Grandes HAVEN Ricardo empleamos}
 
 % ---------- Geometría de página (según sectPr del docx original) ----------
 % Word: top=2977twips(~5.25cm) right=601(~1.06cm) bottom=2693(~4.75cm) left=601(~1.06cm)
